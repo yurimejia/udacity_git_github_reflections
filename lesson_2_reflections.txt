@@ -1,45 +1,46 @@
 What happens when you initialize a repository? Why do you need to do it?
-Ans: Git gets to know that this folder will be trackd but doesn't do it.
-In order to start tracking, I have to add and commit.
+Git gets to know that this folder will be tracked but it doesn't do it by itself.
+In order to start tracking, you have to add and commit.
 
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
 Staging area contains the files that we want to commit, i.e.the files that we
 want to currently track their changes. The working directory contains the files
-that haven't been added for commiting.
+with the most recent changes and the repository the history of all the commits.
+The staging are allows you to select which changes to commit together, prefereably,
+as a logical change.
 
 How can you use the staging area to make sure you have one commit per logical
 change?
-The changes that can be commited appear first at the staging area. 
-I can use git diff --stage to compare the changes to the most recent commit
-and git diff to compare the stages to the working directory.
-If some of the changes are missing, I can add them
+The changes that will be commited have to be first added to the staging area. 
+Use git diff --stage to compare the changes to the most recent commit in the repo
+and git diff to compare the staging area to the working directory.
+If some of the changes are missing, I can add them.
 If some of the changes do not belong to the logical step, I can remove them.
 
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
-For example, when we want to develope a new vesion (a new feature) of the code,
-but we want to keep the current one still working. 
-Branching helps because we can work on the the code parallel and once the new 
-code is ready we can merge it to the master branch.
+For example, when we want to develope a new feature of the code,
+but we want to keep the current one still working, we can branch the code and
+work in parallel. Once the new code is ready, we can merge it to the master branch.
 
 How do the diagrams help you visualize the branch structure?
-I am a very visual person, so a diagram of the history can help understand
-how the code and its different branch have evolved. I can detect when 
-a commit is unreachable, for example.
+A diagram of the history helps understand how the code and its different branches have evolved. 
+It also allows to detect unreachable commits.
 
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
-You put together all the changes that occured since the last common parent of the
-branches. The current checkout branch is always part of the merged branches.
+You put together all the changes that occured in both branches since their last common
+parent. Remeber that the current checkout branch is always part of the merged branches.
 Once we have merged a branch we can remove the label of the branch with
-git branch -d branch_name
+git branch -d branch_name.
 
 What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
-automatically is more efficient but it only applies to simple cases, when both
-versions have sections with the same content or the content changed only on one of them. However, if both version have different content in the same sections then an expert
-has to resolve the problem. This is good because it would take a very sophisticated
-algorithm to automate this process.
+Automatically is efficient but it only applies to simple cases, when both
+versions have sections with the same content or the content changed only on one of them. 
+However, if both versions have different content in the same sections, then an expert
+has to resolve the problem. This is good because it would take very sophisticated
+algorithms to automate this process, and many times only an expert can resolve it.
 
